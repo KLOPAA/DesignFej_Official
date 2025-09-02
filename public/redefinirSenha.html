@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Redefinir Senha</title>
+  <link rel="stylesheet" href="./css/redefinirSenha.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <form id="formRedefinir">
+      <h2>Redefinir Senha</h2>
+      <p>Digite seu e-mail para redefinir a senha:</p><br>
+      <input type="email" id="email" placeholder="Digite seu e-mail" required>
+      <button type="submit">Solicitar redefinição</button>
+      <button type="button" onclick="window.location.href='./login.html'">Voltar</button>
+      
+      <!-- Mensagem de erro -->
+      <div id="errorMessage" style="display: none; color: red; margin-top: 10px;"></div>
+    </form>
+  </div>
+
+  <script src="./js/reset-password.js"></script>
+</body>
+</html>

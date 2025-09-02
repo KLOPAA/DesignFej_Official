@@ -1,0 +1,153 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #faf9fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background: #f4defc;
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #cc66e0;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #d292d7;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #e9b9d9;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-container button {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 0;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  width: auto;
+  text-align: center;
+}
+
+.btn-container button:hover {
+  background: none;
+  text-decoration: none;
+}
+
+#mensagem {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#mensagemVerde {
+  margin-top: 10px;
+}
+
+/* media queries para otimizar para dispositivos móveis */
+
+@media (max-width: 768px) {
+  .product-list {
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 15px;
+  }
+
+  .product-card {
+    width: 100%; 
+    max-width: 280px; 
+  }
+
+  .btn-container button {
+    font-size: 14px; 
+    padding: 10px;
+  }
+
+  .icon-btn {
+    font-size: 14px; 
+    padding: 6px 12px;
+  }
+}
+
+/* ajustes para telas muito pequenas (smartphones) */
+@media (max-width: 480px) {
+  .product-list {
+    flex-direction: column; 
+    gap: 20px;
+  }
+
+  .product-card {
+    width: 100%; 
+    max-width: none; 
+  }
+
+  .product-card button {
+    font-size: 14px; 
+    padding: 12px;
+  }
+
+  .logo {
+    font-size: 24px; 
+  }
+
+  .top-bar {
+    padding: 10px;
+  }
+
+  .panel {
+    width: 90%; 
+  }
+
+  .panel-buttons button {
+    font-size: 12px;
+  }
+}

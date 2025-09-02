@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Definir Nova Senha</title>
+  <link rel="stylesheet" href="./css/redefinirSenha.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <form id="formNovaSenha">
+      <h2>Definir Nova Senha</h2>
+      
+      <input type="password" id="novaSenha" placeholder="Nova senha" required minlength="6">
+      <input type="password" id="confirmarSenha" placeholder="Confirmar nova senha" required minlength="6">
+      
+      <button type="submit">Redefinir Senha</button>
+      <button type="button" onclick="window.location.href='./login.html'">Cancelar</button>
+      
+      <div id="message" style="margin-top: 10px; font-weight: bold;"></div>
+    </form>
+  </div>
+
+  <script src="./js/reset-password.js"></script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alianças</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="top-bar">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <div class="icons">
+                <button onclick="window.location.href='./carrinho.html'" class="icon-btn">🛒 Carrinho <span
+                        class="cart-count">0</span></button>
+                <i class="fas fa-heart" id="favorites-icon"></i>
+                <i class="fas fa-bars menu-icon"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h2>Alianças</h2>
+        <section class="produtos">
+            <div class="produto-card">
+                <img src="./img/https___lojavivara.vtexassets.com_assets_vtex.file-manager-graphql_images_148fcf84-566c-49fa-86b9-a60dac640ef6___f78756bc6ff62b3b1b3f28417cc7ca00.webp"
+                    alt="Anel com Diamante">
+                <div class="produto-info">
+                    <h3>Anel com Diamante</h3>
+                    <p>Anel solitário em ouro branco 18k com diamante central.</p>
+                    <div class="produto-actions">
+                        <button class="btn-carrinho"
+                            onclick="addToCart('3', 'Anel com Diamante', 459.90, '/img/https___lojavivara.vtexassets.com_assets_vtex.file-manager-graphql_images_148fcf84-566c-49fa-86b9-a60dac640ef6___f78756bc6ff62b3b1b3f28417cc7ca00.webp', 'Anel solitário com diamantes')">Carrinho</button>
+                        <button class="btn-favorito"
+                            onclick="addToFavorites('3', 'Anel com Diamante', 459.90, '/img/https___lojavivara.vtexassets.com_assets_vtex.file-manager-graphql_images_148fcf84-566c-49fa-86b9-a60dac640ef6___f78756bc6ff62b3b1b3f28417cc7ca00.webp', 'Anel solitário com diamante central')">Favorito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="produto-card">
+                <img src="./img/sg-11134201-7rep2-m8enmdetakdl86.jpg" alt="Aliança de Casamento">
+                <div class="produto-info">
+                    <h3>Aliança de Casamento</h3>
+                    <p>Aliança em ouro 18k com acabamento brilhante e comfort fit.</p>
+                    <div class="produto-actions">
+                        <button class="btn-carrinho"
+                            onclick="addToCart('6', 'Aliança de Casamento', 359.90, '/img/sg-11134201-7rep2-m8enmdetakdl86.jpg', 'Aliança em ouro com acabamento brilhante')">Carrinho</button>
+                        <button class="btn-favorito"
+                            onclick="addToFavorites('6', 'Aliança de Casamento', 359.90, '/img/sg-11134201-7rep2-m8enmdetakdl86.jpg', 'Aliança em ouro com acabamento brilhante')">Favorito</button>
+                    </div>
+                </div>
+            </div>
+            
+
+        </section>
+    </main>
+
+    <!-- Painel de Favoritos -->
+    <div class="panel" id="favorites-panel">
+        <div class="panel-header">
+            <h2>Meus Favoritos</h2>
+            <i class="fas fa-times panel-close" onclick="toggleFavorites()"></i>
+        </div>
+        <ul id="favorites-items"></ul>
+        <div class="panel-actions">
+            <button class="panel-btn btn-remover" onclick="removeFavoriteSelected()">Remover Selecionados</button>
+        </div>
+    </div>
+
+    <aside class="menu-lateral">
+        <i class="fas fa-times close-menu-icon"></i>
+        <ul>
+            <li><a href="./index.html">Página Inicial</a></li>
+            <li><a href="./brinco.html">Brincos</a></li>
+            <li><a href="./colares.html">Colares</a></li>
+            <li><a href="./pingentes.html">Pingentes</a></li>
+            <li><a href="./Aliancas.html">Alianças</a></li>
+        </ul>
+    </aside>
+
+            <script>
+
+                function addToCart(productId, productName, productPrice, productImage, productDetails) {
+                    // Recuperar carrinho atual ou inicializar vazio
+                    const cartItems = JSON.parse(localStorage.getItem('designfej_cart')) || [];
+
+                    // Verificar se o produto já está no carrinho
+                    const existingItemIndex = cartItems.findIndex(item => item.id === productId);
+
+                    if (existingItemIndex >= 0) {
+                        // Se já existe, aumentar a quantidade
+                        cartItems[existingItemIndex].quantity += 1;
+                    } else {
+                        // Se não existe, adicionar novo item
+                        cartItems.push({
+                            id: productId,
+                            name: productName,
+                            price: productPrice,
+                            image: productImage,
+                            details: productDetails,
+                            quantity: 1
+                        });
+                    }
+
+                    // Salvar no localStorage
+                    localStorage.setItem('designfej_cart', JSON.stringify(cartItems));
+
+                    // Atualizar contador
+                    updateCartCount();
+
+                    // Feedback para o usuário e redirecionamento
+                    if (confirm(`${productName} adicionado ao carrinho! Deseja ir para o carrinho agora?`)) {
+                        window.location.href = 'carrinho.html';
+                    }
+                }
+
+                // Função para adicionar aos favoritos
+                function addToFavorites(productId, productName, productPrice, productImage, productDetails) {
+                    // Recuperar favoritos atual ou inicializar vazio
+                    const favorites = JSON.parse(localStorage.getItem('designfej_favorites')) || [];
+
+                    // Verificar se o produto já está nos favoritos
+                    const existingItemIndex = favorites.findIndex(item => item.id === productId);
+
+                    if (existingItemIndex === -1) {
+                        // Se não existe, adicionar novo item
+                        favorites.push({
+                            id: productId,
+                            name: productName,
+                            price: productPrice,
+                            image: productImage,
+                            details: productDetails
+                        });
+
+                        // Salvar no localStorage
+                        localStorage.setItem('designfej_favorites', JSON.stringify(favorites));
+
+                        // Feedback para o usuário
+                        alert(`${productName} adicionado aos favoritos!`);
+                    } else {
+                        alert(`${productName} já está nos favoritos!`);
+                    }
+                }
+
+                // Atualizar contador de itens no carrinho
+                function updateCartCount() {
+                    const cartItems = JSON.parse(localStorage.getItem('designfej_cart')) || [];
+                    const cartCountElement = document.querySelector('.cart-count');
+                    if (cartCountElement) {
+                        cartCountElement.textContent = cartItems.length;
+                    }
+                }
+
+                // Alternar visibilidade do painel de favoritos
+                function toggleFavorites() {
+                    const panel = document.getElementById("favorites-panel");
+                    const overlay = document.querySelector('.overlay');
+
+                    if (panel.classList.contains('open')) {
+                        panel.classList.remove('open');
+                        overlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    } else {
+                        // Fechar menu lateral se estiver aberto
+                        document.querySelector('.menu-lateral').classList.remove('open');
+
+                        // Carregar favoritos
+                        renderFavorites();
+
+                        panel.classList.add('open');
+                        overlay.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                }
+
+                // Renderizar itens favoritos
+                function renderFavorites() {
+                    const list = document.getElementById("favorites-items");
+                    const favorites = JSON.parse(localStorage.getItem('designfej_favorites')) || [];
+
+                    if (!list) return;
+
+                    list.innerHTML = "";
+
+                    if (favorites.length === 0) {
+                        list.innerHTML = "<li class='empty-message'>Você não tem favoritos</li>";
+                        return;
+                    }
+
+                    favorites.forEach((item, index) => {
+                        const li = document.createElement("li");
+                        li.className = "favorite-item";
+
+                        const checkbox = document.createElement("input");
+                        checkbox.type = "checkbox";
+                        checkbox.className = "item-checkbox";
+                        checkbox.dataset.index = index;
+
+                        const infoDiv = document.createElement("div");
+                        infoDiv.className = "item-info";
+                        infoDiv.innerHTML = `<strong>${item.name}</strong><br><small>${item.details}</small>`;
+
+                        const excluirBtn = document.createElement("button");
+                        excluirBtn.className = "excluir-btn";
+                        excluirBtn.innerHTML = 'Excluir';
+                        excluirBtn.onclick = () => {
+                            if (checkbox.checked) {
+                                favorites.splice(index, 1);
+                                localStorage.setItem('designfej_favorites', JSON.stringify(favorites));
+                                renderFavorites();
+                            } else {
+                                alert("Marque a caixinha para excluir este favorito.");
+                            }
+                        };
+
+                        li.appendChild(checkbox);
+                        li.appendChild(infoDiv);
+                        li.appendChild(excluirBtn);
+
+                        list.appendChild(li);
+                    });
+                }
+
+                // Remover itens selecionados dos favoritos
+                function removeFavoriteSelected() {
+                    const favorites = JSON.parse(localStorage.getItem('designfej_favorites')) || [];
+                    const checkboxes = document.querySelectorAll('#favorites-items input[type="checkbox"]');
+                    const indexesToRemove = [];
+
+                    checkboxes.forEach((checkbox) => {
+                        if (checkbox.checked) {
+                            indexesToRemove.push(parseInt(checkbox.dataset.index));
+                        }
+                    });
+
+                    if (indexesToRemove.length === 0) {
+                        alert("Selecione pelo menos um item para remover.");
+                        return;
+                    }
+
+                    indexesToRemove.sort((a, b) => b - a).forEach(i => favorites.splice(i, 1));
+
+                    localStorage.setItem('designfej_favorites', JSON.stringify(favorites));
+                    renderFavorites();
+                }
+            </script>
+        </section>
+    </main>
+</body>
+
+</html>

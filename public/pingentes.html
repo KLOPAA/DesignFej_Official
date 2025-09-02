@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pingentes - DesignFej</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <header>
+        <div class="top-bar">
+            <div class="search-container">
+                <input type="text" placeholder="O que você procura?">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <div class="icons">
+                <button onclick="window.location.href='./carrinho.html'" class="icon-btn">🛒 Carrinho <span class="cart-count">0</span></button>
+                <i class="fas fa-heart" id="favorites-icon"></i>
+                <i class="fas fa-bars menu-icon"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h2>Pingentes</h2>
+        <section class="produtos">
+            <div class="produto-card">
+                <img src="./img/96d12afa-fcc5-42a0-8db8-1f1ac7b1aea4.png" alt="Pingente Coração">
+                <div class="produto-info">
+                    <h3>Pingente Coração</h3>
+                    <p>Pingente delicado em formato de coração com detalhes em zircônia.</p>
+                    <div class="produto-actions">
+                        <button class="btn-carrinho" onclick="addToCart('11', 'Pingente Coração', 159.90, './img/96d12afa-fcc5-42a0-8db8-1f1ac7b1aea4.png', 'Pingente delicado em formato de coração')">Carrinho</button>
+                        <button class="btn-favorito" onclick="addToFavorites('11', 'Pingente Coração', 159.90, './img/96d12afa-fcc5-42a0-8db8-1f1ac7b1aea4.png', 'Pingente delicado em formato de coração')">Favorito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="produto-card">
+                <img src="./img/pingente-com-pedra-aqua-azul-para-colar-masculino-639286.jpg" alt="Pingente Masculino">
+                <div class="produto-info">
+                    <h3>Pingente Masculino</h3>
+                    <p>Pingente com pedra aqua azul para colar masculino em aço inoxidável.</p>
+                    <div class="produto-actions">
+                        <button class="btn-carrinho" onclick="addToCart('12', 'Pingente Masculino', 89.90, './img/pingente-com-pedra-aqua-azul-para-colar-masculino-639286.jpg', 'Pingente masculino com pedra aqua azul')">Carrinho</button>
+                        <button class="btn-favorito" onclick="addToFavorites('12', 'Pingente Masculino', 89.90, './img/pingente-com-pedra-aqua-azul-para-colar-masculino-639286.jpg', 'Pingente masculino com pedra aqua azul')">Favorito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="produto-card">
+                <img src="./img/cordao_colar_corrente_feminina_40cm_com_pingente_coracao_de_ouro_18k_1329_1_20201214222805.webp" alt="Pingente Ouro 18k">
+                <div class="produto-info">
+                    <h3>Pingente Ouro 18k</h3>
+                    <p>Pingente coração em ouro 18k com acabamento brilhante.</p>
+                    <div class="produto-actions">
+                        <button class="btn-carrinho" onclick="addToCart('13', 'Pingente Ouro 18k', 259.90, './img/cordao_colar_corrente_feminina_40cm_com_pingente_coracao_de_ouro_18k_1329_1_20201214222805.webp', 'Pingente coração em ouro 18k')">Carrinho</button>
+                        <button class="btn-favorito" onclick="addToFavorites('13', 'Pingente Ouro 18k', 259.90, './img/cordao_colar_corrente_feminina_40cm_com_pingente_coracao_de_ouro_18k_1329_1_20201214222805.webp', 'Pingente coração em ouro 18k')">Favorito</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Painel de Favoritos -->
+    <div class="panel" id="favorites-panel">
+        <div class="panel-header">
+            <h2>Meus Favoritos</h2>
+            <i class="fas fa-times panel-close" onclick="toggleFavorites()"></i>
+        </div>
+        <ul id="favorites-items"></ul>
+        <div class="panel-actions">
+            <button class="panel-btn btn-remover" onclick="removeFavoriteSelected()">Remover Selecionados</button>
+        </div>
+    </div>
+
+    <aside class="menu-lateral">
+        <i class="fas fa-times close-menu-icon"></i>
+        <ul>
+            <li><a href="./index.html">Página Inicial</a></li>
+            <li><a href="./brinco.html">Brincos</a></li>
+            <li><a href="./colares.html">Colares</a></li>
+            <li><a href="./pingentes.html">Pingentes</a></li>
+            <li><a href="./Aliancas.html">Alianças</a></li>
+        </ul>
+    </aside>
+
+    <script src="./js/mvc-system.js"></script>
+</body>
+</html>

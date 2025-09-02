@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colares - DesignFej</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <header>
+        <div class="top-bar">
+            <div class="search-container">
+                <input type="text" placeholder="O que você procura?">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <div class="icons">
+                <button onclick="window.location.href='./carrinho.html'" class="icon-btn">🛒 Carrinho <span class="cart-count">0</span></button>
+                <i class="fas fa-heart" id="favorites-icon"></i>
+                <i class="fas fa-bars menu-icon"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h2>Colares</h2>
+        <section class="produtos">
+            <div class="produto-card">
+                <img src="./img/b_colar-de-ouro-18k-veneziana-cora-o-esmeralda-ponto-de-luz-ye7s5dgnzq.webp" alt="Colar de Ouro 18k">
+                <div class="produto-info">
+                    <h3>Colar de Ouro 18k</h3>
+                    <p>Colar elegante em ouro amarelo 18k com pingente de coração esmeralda.</p>
+                    <div class="produto-actions">
+                        <button class="btn-carrinho" onclick="addToCart('9', 'Colar de Ouro 18k', 459.90, './img/b_colar-de-ouro-18k-veneziana-cora-o-esmeralda-ponto-de-luz-ye7s5dgnzq.webp', 'Colar elegante em ouro amarelo 18k')">Carrinho</button>
+                        <button class="btn-favorito" onclick="addToFavorites('9', 'Colar de Ouro 18k', 459.90, './img/b_colar-de-ouro-18k-veneziana-cora-o-esmeralda-ponto-de-luz-ye7s5dgnzq.webp', 'Colar elegante em ouro amarelo 18k')">Favorito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="produto-card">
+                <img src="./img/corrente-laminado-cobra-em-prata-925-esterlina-50cm-60686536ee8df-medium.png" alt="Colar de Prata Sterling">
+                <div class="produto-info">
+                    <h3>Colar de Prata Sterling</h3>
+                    <p>Colar elegante em prata sterling com pingente de coração.</p>
+                    <div class="produto-actions">
+                        <button class="btn-carrinho" onclick="addToCart('2', 'Colar de Prata Sterling', 189.90, './img/corrente-laminado-cobra-em-prata-925-esterlina-50cm-60686536ee8df-medium.png', 'Colar elegante com pingente de coração')">Carrinho</button>
+                        <button class="btn-favorito" onclick="addToFavorites('2', 'Colar de Prata Sterling', 189.90, './img/corrente-laminado-cobra-em-prata-925-esterlina-50cm-60686536ee8df-medium.png', 'Colar elegante com pingente de coração')">Favorito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="produto-card">
+                <img src="./img/cordao_colar_corrente_feminina_40cm_com_pingente_coracao_de_ouro_18k_1329_1_20201214222805.webp" alt="Corrente com Pingente">
+                <div class="produto-info">
+                    <h3>Corrente com Pingente</h3>
+                    <p>Corrente feminina 40cm com pingente coração de ouro 18k.</p>
+                    <div class="produto-actions">
+                        <button class="btn-carrinho" onclick="addToCart('10', 'Corrente com Pingente', 329.90, './img/cordao_colar_corrente_feminina_40cm_com_pingente_coracao_de_ouro_18k_1329_1_20201214222805.webp', 'Corrente feminina com pingente coração')">Carrinho</button>
+                        <button class="btn-favorito" onclick="addToFavorites('10', 'Corrente com Pingente', 329.90, './img/cordao_colar_corrente_feminina_40cm_com_pingente_coracao_de_ouro_18k_1329_1_20201214222805.webp', 'Corrente feminina com pingente coração')">Favorito</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Painel de Favoritos -->
+    <div class="panel" id="favorites-panel">
+        <div class="panel-header">
+            <h2>Meus Favoritos</h2>
+            <i class="fas fa-times panel-close" onclick="toggleFavorites()"></i>
+        </div>
+        <ul id="favorites-items"></ul>
+        <div class="panel-actions">
+            <button class="panel-btn btn-remover" onclick="removeFavoriteSelected()">Remover Selecionados</button>
+        </div>
+    </div>
+
+    <aside class="menu-lateral">
+        <i class="fas fa-times close-menu-icon"></i>
+        <ul>
+            <li><a href="./index.html">Página Inicial</a></li>
+            <li><a href="./brinco.html">Brincos</a></li>
+            <li><a href="./colares.html">Colares</a></li>
+            <li><a href="./pingentes.html">Pingentes</a></li>
+            <li><a href="./Aliancas.html">Alianças</a></li>
+        </ul>
+    </aside>
+
+    <script src="./js/mvc-system.js"></script>
+</body>
+</html>

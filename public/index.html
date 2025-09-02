@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DesignFej Joias</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <div class="overlay"></div>
+
+  <header>
+    <div class="top-bar">
+      <div class="search-container">
+        <input type="text" placeholder="O que você procura?">
+        <i class="fas fa-search search-icon"></i>
+      </div>
+      <div class="icons">
+        <button onclick="window.location.href='carrinho.html'" class="icon-btn">🛒 Carrinho <span
+            class="cart-count">0</span></button>
+        <i class="fas fa-heart" id="favorites-icon"></i>
+        <i class="fas fa-bars menu-icon"></i>
+      </div>
+    </div>
+  </header>
+
+  <nav class="categoria-nav">
+    <div class="item">
+      <a href="brinco.html"><img src="./img/azul-brinco.jpg" alt="Brincos" type="submit" onclick="window.location.href='brinco.html'"></a> 
+      <p>Brincos</p>
+    </div>
+    <div class="item">
+      <a href="./colares.html"><img src="./img/b_colar-de-ouro-18k-veneziana-cora-o-esmeralda-ponto-de-luz-ye7s5dgnzq.webp" alt="Colares"></a>
+      <p>Colares</p>
+    </div>
+    <div class="item">
+      <a href="./pingentes.html"><img src="./img/96d12afa-fcc5-42a0-8db8-1f1ac7b1aea4.png" alt="Pingentes"></a>
+      <p>Pingentes</p>
+    </div>
+    <div class="item">
+      <a href="Aliancas.html"><img src="./img/sheju-joias--9--xzuzae4vfi.webp" alt="Alianças"></a>
+      <p>Alianças</p>
+    </div>
+  </nav>
+
+  <main>
+    <h2>Mais Vendidos</h2>
+    <section class="produtos">
+      <div class="produto-card" data-categoria="brincos">
+        <img src="./img/ChatGPT Image 14 de jul. de 2025, 11_25_07.png" alt="Brinco de Ouro 18k">
+        <div class="produto-info">
+          <h3>Brinco de Ouro 18k</h3>
+          <p>Brinco delicado em ouro amarelo 18k com detalhe em zirconia.</p>
+          <div class="produto-actions">
+            <button class="btn-carrinho"
+              onclick="addToCart('1', 'Brinco de Ouro 18k', 289.90, '/img/ChatGPT Image 14 de jul. de 2025, 11_25_07.png', 'Brinco delicado em ouro amarelo')">Carrinho</button>
+            <button class="btn-favorito"
+              onclick="addToFavorites('1', 'Brinco de Ouro 18k', 289.90, '/img/ChatGPT Image 14 de jul. de 2025, 11_25_07.png', 'Brinco delicado em ouro amarelo')">Favorito</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="produto-card">
+        <img src="./img/corrente-laminado-cobra-em-prata-925-esterlina-50cm-60686536ee8df-medium.png"
+          alt="Colar de Prata Sterling">
+        <div class="produto-info">
+          <h3>Colar de Prata Sterling</h3>
+          <p>Colar elegante em prata sterling com pingente de coração.</p>
+          <div class="produto-actions">
+            <button class="btn-carrinho"
+              onclick="addToCart('2', 'Colar de Prata Sterling', 189.90, '/img/corrente-laminado-cobra-em-prata-925-esterlina-50cm-60686536ee8df-medium.png', 'Colar elegante com pingente de coração')">Carrinho</button>
+            <button class="btn-favorito"
+              onclick="addToFavorites('2', 'Colar de Prata Sterling', 189.90, '/img/corrente-laminado-cobra-em-prata-925-esterlina-50cm-60686536ee8df-medium.png', 'Colar elegante com pingente de coração')">Favorito</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="produto-card">
+        <img
+          src="./img/https___lojavivara.vtexassets.com_assets_vtex.file-manager-graphql_images_148fcf84-566c-49fa-86b9-a60dac640ef6___f78756bc6ff62b3b1b3f28417cc7ca00.webp"
+          alt="Anel com Diamante">
+        <div class="produto-info">
+          <h3>Anel com Diamante</h3>
+          <p>Anel solitário em ouro branco 18k com diamante central.</p>
+          <div class="produto-actions">
+            <button class="btn-carrinho"
+              onclick="addToCart('3', 'Anel com Diamante', 459.90, '/img/https___lojavivara.vtexassets.com_assets_vtex.file-manager-graphql_images_148fcf84-566c-49fa-86b9-a60dac640ef6___f78756bc6ff62b3b1b3f28417cc7ca00.webp', 'Anel solitário com diamantes')">Carrinho</button>
+            <button class="btn-favorito"
+              onclick="addToFavorites('3', 'Anel com Diamante', 459.90, '/img/https___lojavivara.vtexassets.com_assets_vtex.file-manager-graphql_images_148fcf84-566c-49fa-86b9-a60dac640ef6___f78756bc6ff62b3b1b3f28417cc7ca00.webp', 'Anel solitário com diamante central')">Favorito</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="produto-card">
+        <img src="./img/shopping (1).webp" alt="Pulseira de Ouro">
+        <div class="produto-info">
+          <h3>Pulseira de Ouro</h3>
+          <p>Pulseira delicada em ouro amarelo 18k com fecho de segurança.</p>
+          <div class="produto-actions">
+            <button class="btn-carrinho"
+              onclick="addToCart('4', 'Pulseira de Ouro', 219.90, '/img/shopping (1).webp', 'Pulseira delicada com fecho de segurança')">Carrinho</button>
+            <button class="btn-favorito"
+              onclick="addToFavorites('4', 'Pulseira de Ouro', 219.90, '/img/shopping (1).webp', 'Pulseira delicada com fecho de segurança')">Favorito</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="produto-card">
+        <img src="./img/il_570xN.3908504094_jlrc.avif" alt="Conjunto Esmeralda">
+        <div class="produto-info">
+          <h3>Conjunto Esmeralda</h3>
+          <p>Conjunto completo com brincos e colar com pedras esmeralda.</p>
+          <div class="produto-actions">
+            <button class="btn-carrinho"
+              onclick="addToCart('5', 'Conjunto Esmeralda', 689.90, '/img/il_570xN.3908504094_jlrc.avif', 'Conjunto completo com pedras esmeralda')">Carrinho</button>
+            <button class="btn-favorito"
+              onclick="addToFavorites('5', 'Conjunto Esmeralda', 689.90, '/img/il_570xN.3908504094_jlrc.avif', 'Conjunto completo com pedras esmeralda')">Favorito</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="produto-card">
+        <img src="./img/sg-11134201-7rep2-m8enmdetakdl86.jpg" alt="Aliança de Casamento">
+        <div class="produto-info">
+          <h3>Aliança de Casamento</h3>
+          <p>Aliança em ouro 18k com acabamento brilhante e comfort fit.</p>
+          <div class="produto-actions">
+            <button class="btn-carrinho"
+              onclick="addToCart('6', 'Aliança de Casamento', 359.90, '/img/sg-11134201-7rep2-m8enmdetakdl86.jpg', 'Aliança em ouro com acabamento brilhante')">Carrinho</button>
+            <button class="btn-favorito"
+              onclick="addToFavorites('6', 'Aliança de Casamento', 359.90, '/img/sg-11134201-7rep2-m8enmdetakdl86.jpg', 'Aliança em ouro com acabamento brilhante')">Favorito</button>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="produto-card">
+        <img src="./img/b_colar-de-ouro-18k-veneziana-cora-o-esmeralda-ponto-de-luz-ye7s5dgnzq.webp" alt="Corrente de Ouro 18k">
+        <div class="produto-info">
+          <h3>Corrente de Ouro 18k</h3>
+          <p>Corrente elegante em ouro amarelo 18k com elos entrelaçados e fecho de segurança.</p>
+          <div class="produto-actions">
+            <button class="btn-carrinho"
+              onclick="addToCart('7', 'Corrente de Ouro 18k', 459.90, '/img/corrente-ouro.jpg', 'Corrente elegante em ouro amarelo 18k')">Carrinho</button>
+            <button class="btn-favorito"
+              onclick="addToFavorites('7', 'Corrente de Ouro 18k', 459.90, '/img/corrente-ouro.jpg', 'Corrente elegante em ouro amarelo 18k')">Favorito</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="produto-card">
+        <img src="./img/12_1_5_530_brinco20rubi20e20diamantes1.webp" alt="Brinco com Rubi">
+        <div class="produto-info">
+          <h3>Brinco com Rubi</h3>
+          <p>Brinco em ouro 18k com rubi central lapidado e detalhes em zirconia branca.</p>
+          <div class="produto-actions">
+            <button class="btn-carrinho"
+              onclick="addToCart('8', 'Brinco com Rubi', 389.90, '/img/brinco-rubi.jpg', 'Brinco em ouro 18k com rubi central')">Carrinho</button>
+            <button class="btn-favorito"
+              onclick="addToFavorites('8', 'Brinco com Rubi', 389.90, '/img/brinco-rubi.jpg', 'Brinco em ouro 18k com rubi central')">Favorito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+
+
+    </section>
+  </main>
+
+  <aside class="menu-lateral">
+    <i class="fas fa-times close-menu-icon"></i>
+    <ul>
+      <li><a href="#" onclick="filtrarProdutos('todos')">Todos os Produtos</a></li>
+      <li><a href="#" onclick="filtrarProdutos('conjuntos')">Conjuntos</a></li>
+      <li><a href="#" onclick="filtrarProdutos('brincos')">Brincos</a></li>
+      <li><a href="#" onclick="filtrarProdutos('colares')">Colares</a></li>
+      <li><a href="#" onclick="filtrarProdutos('pingentes')">Pingentes</a></li>
+      <li><a href="#" onclick="filtrarProdutos('aneis')">Anéis</a></li>
+      <li><a href="#" onclick="filtrarProdutos('pulseiras')">Pulseiras</a></li>
+      <li><a href="#" onclick="filtrarProdutos('infantil')">Infantil</a></li>
+    </ul>
+  </aside>
+
+  <!-- Painel de Favoritos -->
+  <div class="panel" id="favorites-panel">
+    <div class="panel-header">
+      <h2>Meus Favoritos</h2>
+      <i class="fas fa-times panel-close" onclick="toggleFavorites()"></i>
+    </div>
+    <ul id="favorites-items"></ul>
+    <div class="panel-actions">
+      <button class="panel-btn btn-remover" onclick="removeFavoriteSelected()">Remover Selecionados</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>DesignFej Joias - Sua joalheria de confiança</p>
+    <p>@designfejomijoia</p>
+  </footer>
+
+  <script src="./js/mvc-system.js"></script>
+  <script>
+    // Funções para o menu lateral (mantém funcionalidade existente)
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuIcon = document.querySelector('.menu-icon');
+      const closeMenuIcon = document.querySelector('.close-menu-icon');
+      const menuLateral = document.querySelector('.menu-lateral');
+      const overlay = document.querySelector('.overlay');
+      const favoritesIcon = document.getElementById('favorites-icon');
+
+      if (menuIcon && menuLateral) {
+        menuIcon.addEventListener('click', function () {
+          menuLateral.classList.add('open');
+          overlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      }
+
+      function closeMenu() {
+        if (menuLateral) menuLateral.classList.remove('open');
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (closeMenuIcon) closeMenuIcon.addEventListener('click', closeMenu);
+      if (overlay) overlay.addEventListener('click', closeMenu);
+      if (favoritesIcon) favoritesIcon.addEventListener('click', toggleFavorites);
+
+      const menuLinks = document.querySelectorAll('.menu-lateral a');
+      menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+    });
+
+    function toggleFavorites() {
+      const panel = document.getElementById("favorites-panel");
+      const overlay = document.querySelector('.overlay');
+
+      if (panel.classList.contains('open')) {
+        panel.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      } else {
+        document.querySelector('.menu-lateral').classList.remove('open');
+        renderFavorites();
+        panel.classList.add('open');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function renderFavorites() {
+      const list = document.getElementById("favorites-items");
+      const favorites = JSON.parse(localStorage.getItem('designfej_favorites')) || [];
+
+      if (!list) return;
+      list.innerHTML = "";
+
+      if (favorites.length === 0) {
+        list.innerHTML = "<li class='empty-message'>Você não tem favoritos</li>";
+        return;
+      }
+
+      favorites.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.className = "favorite-item";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "item-checkbox";
+        checkbox.dataset.index = index;
+
+        const infoDiv = document.createElement("div");
+        infoDiv.className = "item-info";
+        infoDiv.innerHTML = `<strong>${item.name}</strong><br><small>${item.details}</small>`;
+
+        const excluirBtn = document.createElement("button");
+        excluirBtn.className = "excluir-btn";
+        excluirBtn.innerHTML = 'Excluir';
+        excluirBtn.onclick = () => {
+          if (checkbox.checked) {
+            favorites.splice(index, 1);
+            localStorage.setItem('designfej_favorites', JSON.stringify(favorites));
+            renderFavorites();
+          } else {
+            alert("Marque a caixinha para excluir este favorito.");
+          }
+        };
+
+        li.appendChild(checkbox);
+        li.appendChild(infoDiv);
+        li.appendChild(excluirBtn);
+        list.appendChild(li);
+      });
+    }
+
+    function removeFavoriteSelected() {
+      const favorites = JSON.parse(localStorage.getItem('designfej_favorites')) || [];
+      const checkboxes = document.querySelectorAll('#favorites-items input[type="checkbox"]');
+      const indexesToRemove = [];
+
+      checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          indexesToRemove.push(parseInt(checkbox.dataset.index));
+        }
+      });
+
+      if (indexesToRemove.length === 0) {
+        alert("Selecione pelo menos um item para remover.");
+        return;
+      }
+
+      indexesToRemove.sort((a, b) => b - a).forEach(i => favorites.splice(i, 1));
+      localStorage.setItem('designfej_favorites', JSON.stringify(favorites));
+      renderFavorites();
+    }
+  </script>
+</body>
+
+</html>
